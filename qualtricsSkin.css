@@ -1,3 +1,25 @@
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Error Messages
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+.JFEScope .PageErrorDialog {
+    background: #fff;
+}
+.PageErrorDialog.RequestResponse {
+  background: white;
+}
+
+#ErrorMessage {
+  font-family: "Open Sans", Arial, Sans-Serif;
+}
+
+.JFEScope .PageErrorDialog .ErrorButtons button{
+    font-family: "Open Sans", Arial, Sans-Serif;
+}
+
+.JFEScope .PageErrorDialog .ErrorContainer {
+      font-family: "Open Sans", Arial, Sans-Serif;
+    }
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Set fonts and headings across most areas
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
@@ -14,7 +36,7 @@ Set fonts and headings across most areas
 /* Question text, should be bolder than body  */
 .Skin .QuestionText{
   font-size:15px;
-  font-family: "Open Sans"; Sans-Serif;
+  font-family: "Open Sans", Arial, Sans-Serif;
   font-weight: 600;
 }
 
@@ -22,7 +44,7 @@ Set fonts and headings across most areas
   line.height: 0.2em; 
   font-size: 14px;
   margin-left: 1em;
-  font-family: "Open Sans";
+  font-family: "Open Sans", Arial, Sans-Serif;
 }
 
 /* Change the style of any user inputted text */
@@ -38,6 +60,10 @@ Set fonts and headings across most areas
   border-radius: 0px;
 }
 
+.Skin select {
+      font-family: "Open Sans", Arial, Sans-Serif;
+    }
+
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Headings and other text style classes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
@@ -46,16 +72,19 @@ h2 {
   font-size: 2.0rem;
   line-height: 1;
   font-weight:400;
-  font-family: "Staatliches", sans-serif;
+  font-family: "Staatliches", Arial, sans-serif;
   color: #25282A;
   padding-top: 0.25em;
   padding-bottom: 0.25em;
 }
 
 h3{
-  font-family:"Staatliches", Sans-Serif;
+  font-family:"Open Sans", Arial, Sans-Serif;
   font-size:18px;
-  border-bottom: solid 2px #d5d5d5;
+  margin-top:-1.5em;
+  color: #4D4F50;
+  /*text-indent:0.5em;*/
+  padding-bottom:0.1em
 }
 
 
@@ -66,12 +95,13 @@ h4 {
   padding-top: 4.25vh;
   font-weight: 600;
   color: #25282a ;
-  font-family: "Open Sans";
+  font-family: "Open Sans", Arial, sans-serif;
   font-size: 17px;
 }
 
 /* Style for instructions after question text */
 inQ {
+font-family: "Open Sans", Arial, sans-serif;
 font-style: italic;
 font-weight:500; 
 color: #25282a;
@@ -90,12 +120,39 @@ Matrix Questions
   font-size:15px;
   font-weight:600;
 }
-
-/* Weight of a matrix header row */
+/* Weight and color of a matrix header row */
 
 .Skin .Matrix th{
   font-weight:500;
 }
+
+.JFEScope .Skin .q-matrix.mobile table td, .JFEScope .Skin .q-matrix.mobile table th, .JFEScope .Skin .q-matrix.mobile table tr {
+  display: block;
+  border-right: none;
+}
+
+.Skin .Matrix table {
+    border-collapse: collapse !important;
+}
+/* Border to the right of the matrix statements */
+.Skin .Matrix table th.c1 {
+  text-align: left;
+  border-right: 2px solid #ccc;
+}
+/* Border under top row of answers */
+.Skin .Matrix  tr.Answers{
+   border-bottom: 2px solid #ccc;
+}
+
+.Skin .Matrix tr.ChoiceRow.ReadableAlt:hover{
+color: #25282a;
+    }
+
+.Skin .Matrix tr.ChoiceRow:hover{
+color: #25282a;
+    }
+
+
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 White space, margins etc. 
@@ -136,8 +193,8 @@ Navigation Buttons
 }
 
 .Skin #Buttons #NextButton:hover, 
-.Skin #Buttons #PreviousButton:hover
-{
+.Skin #Buttons #PreviousButton:hover{
+  color: #25282A;
   background:#B4DC7F;
   border-color:#B4DC7F;
   font-family: "Open Sans", sans-serif;
@@ -147,18 +204,22 @@ Navigation Buttons
 Check Boxes, Radio Buttons Style
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
+/* White background around all answer selections until hover */
 .Skin label.MultipleAnswer, .Skin label.SingleAnswer {
   background: rgba(0,0,0,0);
 }
 
+/* Selected answers get a gray background and a darker bold font */
 .Skin label.MultipleAnswer.q-checked, .Skin label.SingleAnswer.q-checked {
   background: rbga(0,0,0,.06);
   border-radius: 4px;
+  font-weight: bold;
 }
 
 .Skin label.MultipleAnswer:hover, .Skin label.SingleAnswer:hover {
   background: rgba(0,0,0,.12);
   border-radius: 4px;
+  color: #25282A;
 }
 
 /* Change the color of the check boxes and radio buttons to teal when they are checked */
@@ -171,7 +232,7 @@ Check Boxes, Radio Buttons Style
   border: 2px solid #0a8c8b !important;
   background: #0a8c8b url(/jfe/themes/base-templates/qualtrics/base/version-1681934097449-755e6f/files/check.svg) no-repeat center center !important;
   background-size: auto;
-background-size: 85% !important;
+  background-size: 85% !important;
 }
 
 .Skin label.q-checkbox.q-checked, .Skin label.q-checkbox.q-checked.q-focused {
@@ -182,6 +243,12 @@ background-size: 85% !important;
 .Skin label.SingleAnswer.q-checked.q-focused > span::before, .Skin label.SingleAnswer.q-checked > span::before{
   background-color:#0a8c8b !important;
   border: 2px solid #25282a !important;
+}
+
+.Skin label.MultipleAnswer.q-checked, .Skin label.SingleAnswer.q-checked {
+  background: rbga(0,0,0,.06);
+  border-radius: 4px;
+  font-weight: bold;
 }
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -196,7 +263,7 @@ background-size: 85% !important;
 }
 
 .Skin .ProgressBarFill {
-  background-color:#EB6971;
+  background-color:#f47d54;
   height: 12px;
 }
 
@@ -212,4 +279,24 @@ background-size: 85% !important;
 }
 .Skin #ProgressBar{
   margin-top:0.5em;
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ Error Message Styling
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+/*.JFEScope .PageErrorDialog .ErrorContainer {
+       font-family: "Open Sans", Arial, Sans-Serif;
+}
+
+.Skin button, .Skin input, .Skin select, .Skin textarea {
+    font-family: "Open Sans", Arial, Sans-Serif;
+}*/
+
+ /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ End of Survey
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+.Skin .EndOfSurvey {
+  color: #757575;
+  padding: 20px 40px;
 }
